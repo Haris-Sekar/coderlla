@@ -11,6 +11,7 @@ app.use(express.urlencoded({limit:"30mb", extended:"true"}));
 app.use(cors()); 
 
 console.log("handling routes");
+app.use('/auth', authRoutes);
 app.get('/',(req,res)=>{
     res.send('Welcome to Coderlla');
 })
