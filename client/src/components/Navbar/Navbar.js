@@ -1,37 +1,16 @@
-import React from "react";
-import "./navbar.css";
-const Navbar = () => {
-  return (
-    <>
-      <nav>
-        <div id="navbar">
-          <div id="logo" className="reverse">
-            <div className="mobile-btn">&#9776;</div>
-            <div className="logo">
-              Codre<span>lla</span>
-            </div>
-          </div>
-          <div id="links">
-            <a href="/">Home</a>
-            <a href="/">About</a>
-            <a href="/">Blog</a>
-            <a href="/">Service</a>
-            <a href="/">Contact</a>
-          </div>
-        </div>
-      </nav>
-      <div id="mySidenav" className="sidenav">
-        <a href="/" style={{ cursor: "pointer" }} className="closebtn">
-          &times;
-        </a>
-        <a href="/">Home</a>
-        <a href="/">Gallery</a>
-        <a href="/">Blog</a>
-        <a href="/">Portfolio</a>
-        <a href="/">Contact</a>
-      </div>
-    </>
-  );
-};
+import React from 'react'
+import '../../css/loginStyle.css'
+import Logo from './Logo'
+import logo from '../../resources/logo.png'
+import NavButtons from './NavButtons'
 
-export default Navbar;
+function NavBar(props) {
+  return (
+    <div className={props.className}>
+      <Logo src={logo} alt='Logo' className='logo-wrapper-nav' websiteName='website-name-nav' />
+      <NavButtons className='nav-buttons' />
+    </div>
+  )
+}
+
+export default NavBar

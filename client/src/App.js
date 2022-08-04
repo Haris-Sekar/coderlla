@@ -1,10 +1,12 @@
-import Navbar from "./components/Navbar/Navbar";
+import React from "react";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
-     <>
-      <Navbar />
-     </>
+    <div className="App">
+      <LoginPage />
+    </div>
   );
 }
 
