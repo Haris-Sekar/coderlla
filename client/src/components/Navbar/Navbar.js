@@ -1,16 +1,50 @@
-import React from 'react'
-import '../../css/loginStyle.css'
-import Logo from './Logo'
-import logo from '../../resources/logo.png'
-import NavButtons from './NavButtons'
-
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 function NavBar(props) {
-  return (
-    <div className={props.className}>
-      <Logo src={logo} alt='Logo' className='logo-wrapper-nav' websiteName='website-name-nav' />
-      <NavButtons className='nav-buttons' />
-    </div>
-  )
-}
+    return (
+      <div className="navbar">
+        <div className="logo">
+          <img src={require("../../resources/logo.png")} alt="" />
+          <h2>CodRella</h2>
+        </div>
 
-export default NavBar
+        <ul className="links">
+          <li>
+            <Link className="nav-element" to={{pathname:"/"}}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-element" to={{pathname:"/about"}}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-element" to={{pathname:"/contact"}}>
+              Contact
+            </Link>
+          </li>
+          {props.type === "login"?(
+          <li>
+            <Link className="nav-element" to={{pathname:"/login"}}>
+              Login
+            </Link>
+          </li>
+          ):props.type==="home"?(
+            <div className="right">
+            <Link className="dashboard-btn" to={{pathname:"/dashboard"}}>Dashboard</Link>
+        </div>
+          ):""}
+        </ul>
+
+        <div className="toggle">
+          <div className="line1"></div>
+          <div className="line2"></div>
+          <div className="line3"></div>
+        </div>
+      </div>
+    );
+    }
+
+export default NavBar;
