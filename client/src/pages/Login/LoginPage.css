@@ -174,7 +174,6 @@ section .color:nth-child(3){
     
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
-<<<<<<< HEAD
 .form .inputBox button{
     width: 100%; 
     border: none;
@@ -184,15 +183,6 @@ section .color:nth-child(3){
     font-size: 16px;
     letter-spacing: 1px;  
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-=======
-
-.form .inputBox input::placeholder{
-    color: black;
-    
-}
-
-.form .inputBox input[type="submit"]{
->>>>>>> bd942b452c815db7b601dc0d2425c8ac3798e1c9
     background: rgb(127, 255, 212);
     color: black;
     max-width: 100px;
@@ -201,7 +191,6 @@ section .color:nth-child(3){
     font-weight: 600;
     border: 1px solid black;
 }
-<<<<<<< HEAD
  
 
 .form .inputBox button::placeholder{
@@ -210,10 +199,6 @@ section .color:nth-child(3){
 }
   
 .form .inputBox button:hover {
-=======
-
-.form .inputBox input[type="submit"]:hover {
->>>>>>> bd942b452c815db7b601dc0d2425c8ac3798e1c9
 	cursor: pointer;
 	background: white;
 	transform: scale(1.1);
@@ -228,7 +213,6 @@ section .color:nth-child(3){
 }
 
 .forget a{
-<<<<<<< HEAD
     color: blue;
     font-weight: 900;
     text-decoration: none;
@@ -237,9 +221,4 @@ section .color:nth-child(3){
 } 
 .forget a:hover{
     text-decoration: underline;
-=======
-    color: black;
-    text-decoration: none;
-
->>>>>>> bd942b452c815db7b601dc0d2425c8ac3798e1c9
 }
