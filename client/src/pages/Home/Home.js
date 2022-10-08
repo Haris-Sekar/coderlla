@@ -14,7 +14,7 @@ const Home = () => {
             <video src={require("../../resources/1.jpg")} muted autoPlay loop className="video-slider active"></video>
             <video src={require("../../resources/1.jpg")} muted autoPlay loop className="video-slider"></video>
             <video src={require("../../resources/1.jpg")} muted autoPlay loop className="video-slider"></video>
-            <video src={require("../../resources/1.jpg")} muted autoPlay loop classNameName="video-slider"></video>
+            <video src={require("../../resources/1.jpg")} muted autoPlay loop className="video-slider"></video>
             
             <div className="content active">
                 <h1>Instruction 1</h1>

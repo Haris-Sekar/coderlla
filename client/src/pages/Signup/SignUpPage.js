@@ -1,34 +1,39 @@
-import React from "react";
+import React, { useInsertionEffect } from "react";
 import NavBar from "../../components/Navbar/Navbar";
 import "../Login/LoginPage.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import {backEndURL} from "../../Const";
-function formSubmit2(data){ 
-    axios({
-        method:"post",
-        url:backEndURL+"/auth/signup",
-        data:data, 
-    }).then((res)=>{
-        console.log(res);
-    }).catch((err)=>{
-        console.log(err);
-    })
-  }
-function SignUpPage() {
+import { backEndURL } from "../../Const";
+import { useEffect } from "react";
 
+function SignUpPage() {
   const [formData, setFormData] = useState({
-    userName: "",
+    username: "",
     email: "",
     password: "",
     cPassword: "",
   });
-  const data = new FormData();
-    data.append("username",formData.userName);
-    data.append("email",formData.email);
-    data.append("password",formData.password);
-  
+
+  function formSubmit2(data) {
+    axios.post(backEndURL + "/auth/signup", data).then((res) => {
+      console.log(res);
+    });
+  }
+
+  function formValidate(value,field){
+    var mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    setFormData({...formData,username:value});
+    switch (field) {
+      case "email":
+        if (value.match(mailFormat))
+        break;
+    
+      default:
+        break;
+    }
+  }
   return (
     <div>
       <NavBar type="login" />
@@ -53,9 +58,9 @@ function SignUpPage() {
                     <input
                       type="text"
                       placeholder="Name"
-                      value={formData.userName}
+                      value={formData.username}
                       onChange={(e) =>
-                        setFormData({ ...formData, userName: e.target.value })
+                         formValidate(e.target.value,"username")
                       }
                     />
                   </div>
@@ -89,8 +94,10 @@ function SignUpPage() {
                       }
                     />
                   </div>
-                  <div className="inputBox"> 
-                    <button type="button" onClick={formSubmit2(data)}>Signup</button>
+                  <div className="inputBox">
+                    <button type="button" onClick={() => formSubmit2(formData)}>
+                      Signup
+                    </button>
                   </div>
 
                   <p className="forget">

@@ -39,11 +39,7 @@ function LoginPage() {
                   <p className="forget">
                     Forget Password ? <a href="#">Click Here</a>
                   </p>
-<<<<<<< HEAD
                   <p className="forget">Don't have an account ?  <Link id="signup-toggle" to={{pathname:"/signup"}}>Sign Up</Link></p>
-=======
-                  {/* <p className="forget">Don't have an account ? <a href="#" id="signup-toggle" onClick="toggleSignup()">Sign Up</a></p> */}
->>>>>>> bd942b452c815db7b601dc0d2425c8ac3798e1c9
                 </form>
               </div>
             </div>

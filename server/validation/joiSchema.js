@@ -6,7 +6,7 @@ const passRule = Joi.string().min(8);
 const emailRule = Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'edu','in'] } }).required(); 
 
 
-const schemas = {  
+const schemas =  {  
   
   userRegister: Joi.object().keys({ 
     username: userNameRule,
