@@ -74,7 +74,7 @@ const Home = () => {
                 <div className="nav-btn"></div>
                 <div className="nav-btn"></div>
             </div>
-        </section>
+        </section> 
     </div>
   );
 };

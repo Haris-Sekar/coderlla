@@ -1,11 +1,11 @@
-import React, { useInsertionEffect } from "react";
+import React from "react";
 import NavBar from "../../components/Navbar/Navbar";
 import "../Login/LoginPage.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
-import { backEndURL } from "../../Const";
-import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux"
+import { signUp } from "../../action/auth"
 
 function SignUpPage() {
   const [formData, setFormData] = useState({
@@ -14,22 +14,23 @@ function SignUpPage() {
     password: "",
     cPassword: "",
   });
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   function formSubmit2(data) {
-    axios.post(backEndURL + "/auth/signup", data).then((res) => {
-      console.log(res);
-    });
+    console.log(data);
+    dispatch(signUp(data, navigate))
   }
 
-  function formValidate(value,field){
-    var mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  function formValidate(value, field) {
+    const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-    setFormData({...formData,username:value});
+    setFormData({ ...formData, username: value });
     switch (field) {
       case "email":
         if (value.match(mailFormat))
-        break;
-    
+          break;
+
       default:
         break;
     }
@@ -60,7 +61,7 @@ function SignUpPage() {
                       placeholder="Name"
                       value={formData.username}
                       onChange={(e) =>
-                         formValidate(e.target.value,"username")
+                        formValidate(e.target.value, "username")
                       }
                     />
                   </div>

@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import mongoose from "mongoose";
 import cors from "cors"; 
 import authRoutes from './routes/auth.js'; 
+import code from './routes/code.js';
 
 const app = express();
 dotenv.config();
@@ -13,6 +14,7 @@ app.use(cors());
 
 console.log("handling routes");
 app.use('/auth', authRoutes);
+app.use('/code', code);
 app.get('/',(req,res)=>{
     res.send('Welcome to Coderlla');
 })

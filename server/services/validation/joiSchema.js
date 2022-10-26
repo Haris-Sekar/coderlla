@@ -11,7 +11,8 @@ const schemas =  {
   userRegister: Joi.object().keys({ 
     username: userNameRule,
     email: emailRule,
-    password: passRule
+    password: passRule,
+    cPassword: passRule,
   })
 }; 
 export default schemas;

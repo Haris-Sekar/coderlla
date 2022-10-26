@@ -1,7 +1,7 @@
 import express from 'express';
 import { login, signup } from '../controllers/user.js'; 
-import Validate from '../validation/joiValidate.js';
-import joiSchema from '../validation/joiSchema.js';
+import Validate from '../services/validation/joiValidate.js';
+import joiSchema from '../services/validation/joiSchema.js';
 const router = express.Router(); 
 
 router.post('/login', login);  
