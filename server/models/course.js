@@ -15,17 +15,12 @@ const schema = new mongoose.Schema({
         type : String,
         required : true,
     },
-    courseTeacher : {  
-        type: [String],
-        validate: v => Array.isArray(v) && v.length > 0,
+    teacher : {  
+        type: [String], 
         required : true
     },
-    courseStudent : { 
+    student : { 
         type: [String], 
-        default : []
-    },
-    test : { 
-        type : [String],
         default : []
     }    
 });

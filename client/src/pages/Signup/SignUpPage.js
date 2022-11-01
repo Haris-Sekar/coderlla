@@ -37,8 +37,7 @@ function SignUpPage() {
   }
   return (
     <div>
-      <NavBar type="login" />
-      <main>
+       <main>
         <section>
           <div className="color"></div>
           <div className="color"></div>

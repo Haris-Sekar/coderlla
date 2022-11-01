@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors"; 
 import authRoutes from './routes/auth.js'; 
 import code from './routes/code.js';
+import course from './routes/course.js';
 
 const app = express();
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(cors());
 
 console.log("handling routes");
 app.use('/auth', authRoutes);
+app.use('/course', course);
 app.use('/code', code);
 app.get('/',(req,res)=>{
     res.send('Welcome to Coderlla');

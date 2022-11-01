@@ -38,18 +38,17 @@ export const signup = async (req, res) => {
 
 export const login = async (req, res) => { 
     const user = req.body;
-    const curUser = await model.findOne({$or: [{email: user.email }, {username : user.username}]}); 
-
-    if (!curUser)
+     const curUser = await model.findOne({$or: [{username : user.username},{email: user.username }]}); 
+     if (!curUser)
       return res.send({
-        success: "false",
+        success: false,
         error: "User with this Email/Username not found",
       }); 
 
     const resultOfSalt = await bcrypt.compare(user.password, curUser.password);
     if (!resultOfSalt)
       return res.send({
-        success: "false",
+        success: false,
         error: "Invalid username or password",
       });
 

@@ -4,7 +4,6 @@ import "./Contact.css";
 function Contact() {
   return (
     <div> 
-      <NavBar type="login" />
       <main>
         <section id="contact-section">
           <div className="color"></div>

@@ -24,7 +24,6 @@ function LoginPage() {
 
   return (
     <div>
-      <NavBar type="login" />
       <main>
         <section id="login-section">
           <div className="color"></div>

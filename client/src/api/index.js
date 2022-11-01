@@ -15,3 +15,6 @@ export const signUp = (formData) => API.post('/auth/signup', formData);
 export const logIn = (formData) => API.post('/auth/login', formData);
 
 export const codeCompile = (code) => API.post('/code/compile', code);
+
+export const joinClass = (code) => API.post('/course/joinClass', code);
+export const createClass = (code) => API.post('/course/createClass', code);
